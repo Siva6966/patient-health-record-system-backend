@@ -1,0 +1,2 @@
+package com.example.phr.service; import com.example.phr.model.Bill; import com.example.phr.repository.BillRepository; import org.springframework.stereotype.Service; import org.springframework.transaction.annotation.Transactional;
+@Service @Transactional public class BillService { private final BillRepository repo; public BillService(BillRepository repo){this.repo=repo;} public Bill create(Bill b){return repo.save(b);} }

@@ -1,0 +1,2 @@
+package com.example.phr.controller; import com.example.phr.model.Doctor; import com.example.phr.repository.DoctorRepository; import org.springframework.web.bind.annotation.*; import java.util.List;
+@RestController @RequestMapping("/api/doctors") @CrossOrigin(origins="*") public class DoctorController { private final DoctorRepository repo; public DoctorController(DoctorRepository repo){this.repo=repo;} @GetMapping public List<Doctor> all(){return repo.findAll();} }

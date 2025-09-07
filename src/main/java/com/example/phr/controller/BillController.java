@@ -1,0 +1,2 @@
+package com.example.phr.controller; import com.example.phr.model.Bill; import com.example.phr.service.BillService; import org.springframework.web.bind.annotation.*; import java.util.List;
+@RestController @RequestMapping("/api/bills") @CrossOrigin(origins="*") public class BillController { private final BillService service; public BillController(BillService service){this.service=service;} @PostMapping public Bill create(@RequestBody Bill b){return service.create(b);} @GetMapping public List<Bill> all(){ return java.util.Collections.emptyList(); } }
